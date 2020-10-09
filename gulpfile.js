@@ -4,7 +4,10 @@ const gulp = require("gulp");
 const webpack = require("webpack-stream");
 const browsersync = require("browser-sync");
 
-const dist = "./dist/";
+//const dist = "./dist/";
+//"./C:/Users/Вера/Desktop/LearnHtml/Progi/Openserver/OpenServer/domains/test"
+//прописываем путь в domains openserver чтобы когда галп собирал файлы он создал ассет, который можно запустить на локальном сервере
+const dist = "C:/Users/Вера/Desktop/LearnHtml/Progi/Openserver/OpenServer/domains/PracticeCourseJStest";
 
 gulp.task("copy-html", () => {
     return gulp.src("./src/index.html")
