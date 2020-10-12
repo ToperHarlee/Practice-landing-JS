@@ -51,10 +51,10 @@ const modals = () => {
     }
 
     function showModalByTime(selector, time) {
-        setTimeout(() => {
+        let timeout = setTimeout(() => {
             openModal(document.querySelector(selector));
         }, time);
-        clearTimeout();
+        clearTimeout(timeout);
     }
     
     /*const callEngineerBtn = document.querySelector('.popup_engineer_btn'),
