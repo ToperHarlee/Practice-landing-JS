@@ -50,14 +50,8 @@ const changeModalState = (state) => {
                             i === 0 ? state[prop] = "Холодное" : state[prop] = "Теплое";
                             element.forEach((box, j) => {
                                 box.checked = false;
-                                if (box.checked === false){
-                                    document.querySelector('.popup_calc_profile_button').disabled = true;
-                                }
                                 if (i === j){
                                     box.checked = true;
-                                }
-                                if (box.checked === true){
-                                    document.querySelector('.popup_calc_profile_button').disabled = false;
                                 }
                             });
                         } else {
