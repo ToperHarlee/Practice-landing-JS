@@ -6,6 +6,7 @@ import tabs from "./modules/tabs";
 import forms from "./modules/forms";
 import changeModalState from "./modules/changeModalState";
 import timer from "./modules/timer";
+import images from "./modules/images";
 
 //лучше без обработчика тк при загрузке страницы функция будет срабатывать (например модальные окна) а потом через таймаут еще раз
 window.addEventListener('DOMContentLoaded', () => {
@@ -20,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs('.balcon_icons', '.balcon_icons_img', '.big_img > img', 'do_image_more', 'inline-block');
     forms(modalState);
     timer('.container1', deadline);
+    images();
 
 });
 
