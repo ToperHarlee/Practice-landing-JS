@@ -1,17 +1,20 @@
 const modals = () => {
 
+    let scroll = calcScroll();
+
     let openModal = (modal) => {
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        document.body.style.marginRight = `${scroll}px`;
         //document.body.classList.add('modal-open');//класс из бутстрапа - запрещает скролл при открытой модалке
     }
 
     let closeModal = (modal) => {
         modal.style.display = 'none';
         document.body.style.overflow = '';
+        document.body.style.marginRight = `0px`;
         //document.body.classList.remove('modal-open');
     }
-
 
     function bindModal(triggerSelector, modalSelector, closeSelector, closeClickOverlay = true) {
 
@@ -55,6 +58,22 @@ const modals = () => {
             openModal(document.querySelector(selector));
         }, time);
         clearTimeout(timeout);
+    }
+
+    function calcScroll () {
+        let div = document.createElement('div');
+
+        div.style.cssText = `
+        width: 50px;
+        height: 50px;
+        overflow: scroll;
+        visibility: hidden;
+        `;
+
+        document.body.appendChild(div);
+        let scrollWidth = div.offsetWidth - div.clientWidth;
+        div.remove();
+        return scrollWidth;
     }
     
     /*const callEngineerBtn = document.querySelector('.popup_engineer_btn'),
